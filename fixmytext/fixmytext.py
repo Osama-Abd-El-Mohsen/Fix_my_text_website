@@ -93,9 +93,8 @@ def index() -> rx.Component:
                     ),
                     rx.text_area(
                         placeholder="Enter some text...",
-                        size="1",
                         variant="soft",
-                        font_family="Cairo",
+                        font_family="Cairo-Bold",
                         on_change=State.set_text,
                         value=State.bad_text,
                         style = {"width":"100%"}
@@ -104,12 +103,13 @@ def index() -> rx.Component:
                         "Fix Text",
                         on_click=State.fix_my_text,
                         color_scheme="cyan",
-                        size="3",
+                        size="4",
+                        font_family="Vobca-Black"
                     ),
                     rx.text_area(
                         placeholder="Result...",
                         variant="soft",
-                        font_family="Cairo",
+                        font_family="Cairo-Bold",
                         is_read_only=True,
                         value=State.fixed_text,
                         style = {"width":"100%"}
@@ -119,7 +119,8 @@ def index() -> rx.Component:
                         "Copy Result",
                         on_click=rx.set_clipboard(State.fixed_text),
                         color_scheme="gray",
-                        size="3",
+                        size="4",
+                        font_family="Vobca-Black"
                     ),
                     spacing="4",
                     align="center",
