@@ -33,8 +33,6 @@ class State(rx.State):
             result += fixTextDict.get(ch, ch)
         self.fixed_text = result
 
-    def copy_result(self):
-        pyperclip.copy(self.fixed_text)
 
 # -----------------------------
 # 🎨 Colors
@@ -119,7 +117,7 @@ def index() -> rx.Component:
                     ),
                     rx.button(
                         "Copy Result",
-                        on_click=State.copy_result,
+                        on_click=rx.set_clipboard(State.fixed_text),
                         color_scheme="gray",
                         size="3",
                     ),
